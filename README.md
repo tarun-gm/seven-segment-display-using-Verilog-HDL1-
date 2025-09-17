@@ -5,7 +5,6 @@ To design and simulate a seven-segment display driver using Verilog HDL, and ver
 
 ## Apparatus Required  
 - **Vivado 2023.1**  
-- **Computer system** with a suitable operating system  
 
 ## Procedure  
 
