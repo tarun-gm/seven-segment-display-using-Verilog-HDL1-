@@ -1,44 +1,21 @@
-# Seven-Segment Display Driver using Verilog HDL
+
+## Exp-No: 02 - Write and simulate seven segment display using Verilog HDL and verify with testbench 
 
 ## Aim  
-To design and simulate a seven-segment display driver using Verilog HDL, and verify its functionality through a testbench in the Vivado 2023.1 environment. The objective is to implement the logic that converts a 4-bit binary input into the corresponding 7-segment display output for the digits 0 to 9.
+To design and simulate a Seven Segment using Verilog HDL and verify its functionality through a testbench using the Vivado 2023.1 simulation environment.
 
 ## Apparatus Required  
 - **Vivado 2023.1**  
 
 ## Procedure  
-
-### 1. Launch Vivado 2023.1  
-- Open Vivado and create a new project.  
-
-### 2. Design the Verilog Code  
-- Write the Verilog code for the seven-segment display, defining the logic that maps a 4-bit binary input to the corresponding segments (a to g) of the display.  
-
-### 3. Create the Testbench  
-- Write a testbench to simulate the seven-segment display behavior. The testbench should apply various 4-bit input values and monitor the corresponding output on the seven-segment display.  
-
-### 4. Create the Verilog Files  
-- Create both the design module and the testbench in the Vivado project.  
-
-### 5. Run Simulation  
-- Run the behavioral simulation to verify the output. Ensure the seven-segment display behaves correctly for binary inputs **0000 to 1001** (decimal **0 to 9**).  
-
-### 6. Observe the Waveforms  
-- Analyze the output waveforms in the simulation window, and verify that the correct segments light up for each digit.  
-
-### 7. Save and Document Results  
-- Capture screenshots of the waveform and save the simulation logs. These will be included in the lab report.  
-
----
+Launch Vivado Open Vivado 2023.1 by double-clicking the Vivado icon or searching for it in the Start menu. Create a New Project Click on "Create Project" from the Vivado Quick Start window. In the New Project Wizard: Project Name: Enter a name for the project (e.g., Mux4_to_1). Project Location: Select the folder where the project will be saved. Click Next. Project Type: Select RTL Project, then click Next. Add Sources: Click on "Add Files" to add the Verilog files (e.g., mux4_to_1_gate.v, mux4_to_1_dataflow.v, etc.). Make sure to check the box "Copy sources into project" to avoid any external file dependencies. Click Next. Add Constraints: Skip this step by clicking Next (since no constraints are needed for simulation). Default Part Selection: You can choose a part based on the FPGA board you are using (if any). If no board is used, you can choose any part, for example, xc7a35ticsg324-1L (Artix-7). Click Next, then Finish. Add Verilog Source Files In the "Sources" window, right-click on "Design Sources" and select Add Sources if you didn't add all files earlier. Add the Verilog files (mux4_to_1_gate.v, mux4_to_1_dataflow.v, etc.) and the testbench (mux4_to_1_tb.v). Check Syntax Expand the "Flow Navigator" on the left side of the Vivado interface. Under "Synthesis", click "Run Synthesis". Vivado will check your design for syntax errors. If any errors or warnings appear, correct them in the respective Verilog files and re-run the synthesis. Simulate the Design In the Flow Navigator, under "Simulation", click on "Run Simulation" → "Run Behavioral Simulation". Vivado will open the Simulations Window, and the waveform window will show the signals defined in the testbench. View and Analyze Simulation Results Adjust Simulation Time To run a longer simulation or adjust timing, go to the Simulation Settings by clicking "Simulation" → "Simulation Settings". Under "Simulation", modify the Run Time (e.g., set to 1000ns). Generate Simulation Report Once the simulation is complete, you can generate a simulation report by right-clicking on the simulation results window and selecting "Export Simulation Results". Save the report for reference in your lab records. Save and Document Results Save your project by clicking File → Save Project. Take screenshots of the waveform window and include them in your lab report to document your results. You can include the timing diagram from the simulation window showing the correct functionality of the Seven Segment across different select inputs and data inputs. Close the Simulation Once done, by going to Simulation → "Close Simulation
 ## Logic Diagram
 
-![image](https://github.com/user-attachments/assets/e561cdb5-b1b0-42d0-94f5-e1efaec9704c)
-
-![image](https://github.com/user-attachments/assets/dc32254e-f88d-471a-a2ba-e4ec5eb3fc11)
-
-![image](https://github.com/user-attachments/assets/a8a8921e-0a37-4697-86d8-0c43cd8aef5a)
+<img width="520" height="901" alt="image" src="https://github.com/user-attachments/assets/c1e3a889-6b89-4c6c-9762-336396ea91b2" />
 
 ## Verilog Code for Seven-Segment Display  
+
+## RTL Code:
 
 module HDL1(bcd,seg);
     input [3:0]bcd;
@@ -60,6 +37,7 @@ module HDL1(bcd,seg);
       endcase
    end  
 endmodule
+
 
 ## Testbench for Seven-Segment Display
 
@@ -92,6 +70,4 @@ endmodule
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ca817150-3f90-4570-bf83-6e35907f9687" />
 
 ## Conclusion
-In this experiment, a seven-segment display driver was successfully designed and simulated using Verilog HDL. The simulation results confirmed that the display correctly represented the digits 0 to 9 based on the 4-bit binary input. The testbench effectively verified the functionality of the seven-segment display by applying various input combinations and observing the corresponding segment outputs.
-
-This experiment highlights how Verilog HDL can be used to control hardware components like a seven-segment display in digital systems.
+The Seven Segment Display experiment successfully demonstrated how numerical values (0–9) can be represented using a combination of illuminated segments. By giving the proper binary or BCD inputs to the decoder/driver circuit, the display showed the corresponding digit clearly. This experiment helped in understanding the working principle of segment displays, the concept of active high/active low configurations, and the importance of digital logic in driving display devices. It also established the practical application of combinational logic circuits in real-time devices such as calculators, digital clocks, and measuring instruments.
